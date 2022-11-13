@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de estrangeiros</title>
+</head>
+<body>
+    <h1>Cadastro de nacionalidade</h1>
+    Nome: <input type="text" name="nome" id="nome">
+    Idade: <input type="number" name="idade" id="idade">
+    Sexo: <input type="text" name="sex" id="sex">
+    Nacionalidade: <input type="text" name="nacio" id="nacio">
+    <input type="button" value="Cadastrar" onclick="cadastrar()">
+    <div id="res"></div>
+    <script>
+        function cadastrar(){
+            var cadastro = {
+                nome: document.getElementById('nome').value, //preciso colocar o .value para pegar oq foi preenchido nos inputs
+                idade: document.getElementById('idade').value,
+                sexo: document.getElementById('sex').value,
+                nacio: document.getElementById('nacio').value
+            }
+            var res = document.getElementById('res')
+            if (cadastro.nacio == 'Brasileiro' || cadastro.nacio == 'Brasileira'){
+                res.innerHTML = `A pessoa com o nome <strong>${cadastro.nome}</strong>, ${cadastro.idade} anos de idade, sexo ${cadastro.sexo}
+                e de nacionalidade <strong>${cadastro.nacio}</strong> está com o cadastro <strong>APROVADO</strong>`
+            } else {
+                res.innerHTML = `A pessoa com o nome <strong>${cadastro.nome}</strong>, ${cadastro.idade} anos de idade, sexo ${cadastro.sexo}
+                e de nacionalidade <strong>${cadastro.nacio}</strong> não está apta para realizar o cadastro`
+            }
+        }
+    </script>
+</body>
+</html>

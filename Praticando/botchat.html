@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var chat = prompt('O chat está aberto!');
+        if (chat.includes('Olá')){
+            document.write(`<strong>${chat}</strong><br/>`)
+            document.write('Olá, como posso ajudar?');
+        };
+        if (chat.includes('Tchau')){
+            document.write(`<strong>${chat}</strong><br/>`)
+            document.write('Até mais tarde! Obrigado pela visita.');
+        };// Aprendi a usar o .includes para identificar palavras usadas na frase e responder conforme a palavra usada
+    </script>
+</body>
+</html>

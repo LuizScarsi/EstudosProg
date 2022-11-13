@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(145, 110, 110);
+            color: black;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em Javascript.</p>
+    <div name = "msg1">Clique em mim</div>
+    <div id="msg2">Clique em mim 2</div> <!--Posso adicionar um id para acessar (é bom usar quando tenho vários elementos iguais, vários divs)-->
+    <div class="msg3">Clique em mim 3</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = document.getElementsByTagName('p')[0] //seleciona o primeiro parágrafo
+        var p2 = document.getElementsByTagName('p')[1] //seleciona o segundo parágrafo
+        window.document.write('Está escrito assim: ' + p1.innerText) //acessa o texto do p1
+        p1.style.color = 'blue'
+        corpo.style.background = 'red'
+        document.write(p2.innerHTML) //innerHTML puxa o texto formatado, apareceu em negrito
+        document.write(p2.innerText) //innerText não formatado
+       /* var d = document.getElementById('msg2') //acessando o div que coloquei id
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+        window.document.getElementById('msg2').innerText = 'Olá' //posso acessar diretamente também se eu for modificar o elemento apenas uma vez
+        */
+       var d = document.getElementsByName('msg1')[0] //selecionando por nome. Posso abreviar para apenas document (sem o window antes)
+       d.innerText = 'Aoba'
+       var d2 = window.document.querySelector('div#msg2') //selecionando por Id, quando é Id carrega a # antes
+       d2.style.color = 'green'
+       var d3 = document.querySelector('div.msg3') //selecionando por classe, quando é por classe carrega o . antes
+       d3.style.background = 'green'
+    </script>
+</body>
+</html>
